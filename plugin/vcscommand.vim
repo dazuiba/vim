@@ -1144,9 +1144,9 @@ nnoremap <silent> <Plug>VCSVimDiff :VCSVimDiff<CR>
 " Section: Default mappings {{{1
 
 if !VCSCommandGetOption('VCSCommandDisableMappings', 0)
-	if !hasmapto('<Plug>VCSAdd')
-		nmap <unique> <Leader>ca <Plug>VCSAdd
-	endif
+"  if !hasmapto('<Plug>VCSAdd')
+"    nmap <unique> <Leader>ca <Plug>VCSAdd
+"  endif
 	if !hasmapto('<Plug>VCSAnnotate')
 		nmap <unique> <Leader>cn <Plug>VCSAnnotate
 	endif

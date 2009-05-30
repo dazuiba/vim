@@ -5,10 +5,25 @@ let g:netrw_list_hide= '.*\.swp$,^\.'
 set nocompatible  " We don't want vi compatibility.
 
 set diffopt=filler,iwhite
+set guioptions-=T
+set guioptions-=m
 
 set tags+=/var/lib/var/lib/gems/1.8/gems/tags,~/.gem/ruby/1.8/gems/tags
 let g:fuzzy_matching_limit = 15
+
 let mapleader=","
+let VCSCommandDisableMappings=1 " key binding conflict, so disable vcs key map
+set grepprg=ack
+set grepformat=%f:%l:%m
+
+nmap ,ss :source $HOME/.vimrc<CR>
+nmap ,sv :e $HOME/.vimrc<CR>
+nmap ,sr :!ruby %<CR>
+nmap ,sc :!ruby -c %<CR>
+
+map <leader>t :FuzzyFinderTextMate<CR>
+map <leader>b :FuzzyFinderBuffer<CR>
+"map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 " ,* is Substitute(Replace)
 nmap <Leader>* :%s/<C-R><C-W>/
 
@@ -92,17 +107,8 @@ nnoremap <silent> <C-s-p> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew %<CR>
 nnoremap <silent> <C-q> :bd<CR>
 
-nnoremap <silent> <C-1> :b1<CR>
-nnoremap <silent> <C-2> :b2<CR>
-nnoremap <silent> <C-3> :b3<CR>
-nnoremap <silent> <C-4> :b4<CR>
-nnoremap <silent> <C-5> :b5<CR>
-nnoremap <silent> <C-6> :b6<CR>
-nnoremap <silent> <C-7> :b7<CR>
 noremap <C-j> :bprev<CR>
 noremap <C-k> :bnext<CR>
-nmap ,s :source $HOME/.vimrc<CR>
-nmap ,v :e $HOME/.vimrc<CR>
 
 
 noremap <C-A-t> :FuzzyFinderTextMate<CR>
