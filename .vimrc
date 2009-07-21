@@ -7,11 +7,11 @@ set nocompatible  " We don't want vi compatibility.
 set diffopt=filler,iwhite
 set guioptions-=T
 set guioptions-=m
-
+set nobackup
 set tags+=/var/lib/var/lib/gems/1.8/gems/tags,~/.gem/ruby/1.8/gems/tags
 let g:fuzzy_matching_limit = 15
 
-let mapleader=","
+let mapleader="'"
 let VCSCommandDisableMappings=1 " key binding conflict, so disable vcs key map
 set grepprg=ack
 set grepformat=%f:%l:%m
@@ -59,7 +59,7 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
 " Color scheme
 set background=dark
-colorscheme ir_black_mod " This is a much better color scheme, Scotty :)
+colorscheme desert "ir_black_mod
 "colorscheme twilight
 
 " Formatting (some of these are for coding in C and C++)
@@ -112,6 +112,7 @@ noremap <C-k> :bnext<CR>
 
 
 noremap <C-A-t> :FuzzyFinderTextMate<CR>
+noremap <C-A-b> :FuzzyFinderMruFile<CR>
 " F1 is toggle indent style smartly
 map <F1> :call <SID>ToggleIndentStyle()<CR>
 imap <F1> :call <Esc><F1>a
